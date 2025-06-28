@@ -1,0 +1,144 @@
+@use "./general.scss" as *;
+
+#lieu{
+  .container-flex{
+    min-height: 100vh;
+    padding: 30px 0;
+    justify-content: center;
+    column-gap: 50px;
+
+  }
+  #map{
+    width: 48%;
+    overflow: hidden;
+    display: flex; /*à verif*/
+    flex-direction:column;
+    gap: 20px;
+    @media all and (max-width: 1080px)
+    {
+      width: 100%;
+    }
+    h2{
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #5d365d;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px;
+      text-transform: uppercase;
+      //padding-bottom: 20px;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    iframe{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  #info-pratique{
+    width: 48%;
+
+
+
+    @media all and (max-width: 1080px)
+    {
+      width: 100%;
+      padding-top:20px;
+    }
+    h2{
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #5d365d;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+    }
+    #cadre-info {
+      display: flex;
+      flex-direction: column;
+      align-self:center;
+
+
+
+      background-color: rgba(255, 255, 255, 0.46);
+      padding: 1rem;
+      gap:4.5rem;
+
+      :first-child{
+        margin-right: 50px; /*espace entre les clonnes*/
+      }
+
+      .infos {
+
+        width: 100%;
+        margin: 15px 0;
+        flex:1; /*les elemnts prennent tte la hauteur*/
+        display:flex;
+
+        align-items: center;
+        justify-content:start;
+
+
+
+        .picto {
+          width: 15%;
+          display: flex;
+          justify-content: center;
+          //align-items: center;
+          //justify-content: center;
+
+        }
+
+        .texte {
+          width: 85%;
+
+
+        }
+      }
+      .lien{
+
+        width: 100%;
+        height: 64%;
+        padding-top:5px;
+        padding-bottom:5px;
+
+        background-color: rgba(255, 20, 147, 0.34);
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        justify-content: center;
+        //align-self: center;
+        align-items: center;
+
+        //background-color:#5d365d;
+        margin:0 auto;
+        text-align: center;
+        //justify-content: center;
+        &:hover{
+          background-color: #f706a7;
+          color:rgba(255, 255, 255, 0.65);
+          transform: scale(1.05);
+
+        }
+
+        img{
+          width: 100%;
+        }
+        p{
+          color:#ffffff;
+
+        }
+
+
+      }
+    }
+  }
+
+}
+
+

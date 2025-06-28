@@ -1,0 +1,202 @@
+@use "./general.scss" as *;
+
+#contact{
+  margin:0 auto;
+  justify-content: center;
+  align-items: center;
+  background-color: #d8bfd8;
+  padding-top:200px;
+  .container-flex{
+    display: flex;
+    .gauche, .droite {
+      flex:1 1 300px;
+      width: 50%;
+      @media all and (max-width: 768px)
+      {
+        width: 100%;
+      }
+    };
+    .gauche {
+
+      display: flex;
+      justify-content: center;
+
+      .formulaire {
+        h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          color: #5d365d;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 20px;
+          text-transform: uppercase;
+          padding-bottom: 20px;
+        }
+        #form-contact {
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+
+          label {
+            margin-top: 1rem;
+            //font-weight: bold;
+
+            .checkbox {
+              margin-top: 1rem;
+              display: flex;
+              align-items: center;
+              font-size: 0.9rem;
+
+              input {
+                margin-top: 0.5rem;
+                padding: 0.75rem;
+                font-size: 1rem;
+                border-radius: 5px;
+                border: 1px solid #5d365d;
+              }
+            }
+          }
+
+          input {
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #5d365d;
+          }
+
+          textarea {
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #5d365d;
+          }
+
+          button {
+            font-weight:bold;
+            width: 100%;
+            color:#ffffff;
+            height: 64%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            background-color: rgba(255, 20, 147, 0.34);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            justify-content: center;
+            //align-self: center;
+            align-items: center;
+
+            //background-color:#5d365d;
+            margin: 0 auto;
+            text-align: center;
+            //justify-content: center;
+            &:hover {
+              background-color: #f706a7;
+              color: rgba(255, 255, 255, 0.65);
+              transform: scale(1.05);
+
+            }
+
+          }
+
+
+        }
+      }
+    }
+    .droite {
+
+      .infos {
+        display:flex;
+        flex-direction: column;
+        gap: 1.75rem;
+        p {
+        }
+
+        .lien {
+          width:100%;
+          bottom:0;
+          //height: 50%;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          background-color: rgba(255, 20, 147, 0.34);
+          border-radius: 25px;
+          transition: all 0.3s ease;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          text-align: center;
+          text-transform:uppercase;
+          color:#ffffff;
+          font-wheight:bold;
+          &:hover {
+            background-color: #f706a7;
+            color: rgba(255, 255, 255, 0.65);
+            transform: scale(1.05);
+          }
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          color: #5d365d;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 20px;
+          text-transform: uppercase;
+          padding-bottom: 20px;
+        }
+
+        form {
+
+          label{
+            text-transform: uppercase;
+            color: #5d365d;
+          }
+
+          input {
+            width:100%;
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #5d365d;
+
+          }
+
+          .lien {
+            width:100%;
+            bottom:0;
+            //height: 50%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: rgba(255, 20, 147, 0.34);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            text-align: center;
+            text-transform:uppercase;
+            color:#ffffff;
+
+            &:hover {
+              background-color: #f706a7;
+              color: rgba(255, 255, 255, 0.65);
+              transform: scale(1.05);
+
+              button {
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+

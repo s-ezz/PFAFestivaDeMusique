@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="build/css/style.min.css">
     <title>Festival de Musique - Parc d'Enghien</title>
+
 </head>
 <body>
     <div class="slide" id="home">
@@ -53,8 +54,8 @@
         <div class="container-flex">
             <h1 id="title-menu">FESTIVAL DE MUSIQUE</h1>
             <div id="menu">
-                <a href="#ticket" id="button-ticket">Ticket</a>
-                <div id="burger" class="open">
+                <a href="#" id="button-ticket">Ticket</a>
+                <div id="burger" class=" ">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -414,18 +415,19 @@
                         <option value="3">PASS DIMANCHE</option>
                     </select>
                     <label for="adulte">Nombre d'adultes : </label>
-                    <input type="number" id="adulte" min="0" value="0"></input>
+                    <input type="number" id="adulte" min="0" value="0">
                     <label for="enfant">Nombre d'enfants</label>
-                    <input type="number" id="enfant" min="0" value="0"></input>
-
-                    <button onclick="calculerTotal()">Commander</button>
+                    <input type="number" id="enfant" min="0" value="0">
                     <p>Total à payer : <span id="total">0 €</span></p>
-
-                    <p class="note">🎁 Les enfants de moins de 3 ans bénéficient de l'entrée gratuite</p>
-
+                    <button onclick="calculerTotal()">Commander</button>
                 </div>
 
+
+
+
+
             </div>
+            <p class="note">🎁 Les enfants de moins de 3 ans bénéficient de l'entrée gratuite</p>
         </div>
     </div>
     <div class="slide" id="contact">
@@ -455,15 +457,15 @@
             <div class="droite">
                 <div class="infos">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum earum enim necessitatibus quos sequi. Asperiores autem beatae deserunt dolore est, hic id magni neque nisi, numquam quos repellendus tempora totam?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor facere magni nisi odio perferendis quae repellat soluta sunt tempora voluptate. Accusamus ad aliquid, animi aut dignissimos ipsam laboriosam neque nihil obcaecati sunt? Cum dicta, dignissimos dolor ducimus illum ipsa laudantium magnam maxime odio porro quo quod rerum suscipit tempore voluptatem.</p>
+
                     <div class="lien">en savoir plus</div>
                     <h2>newsletter</h2>
                     <p>Ne ratez aucune info ! Inscrivez-vous à la newsletter</p>
                     <form id="form-newsletter">
-                        <label for="newsletter-email" class="visually-hidden">Email</label>
+                        <label for="newsletter-email" class="visually-hidden">Votre adresse éléctronique :</label>
                         <input type="email" name="newsletter-email" id="newsletter-email" placeholder="Votre email" required>
-                        <div class="lien">
-                            <button type="submit">s'inscrire</button>
-                        </div>
+                        <div class="lien">s'inscrire</div>
                     </form>
                 </div>
             </div>
@@ -479,121 +481,44 @@
             <div class="footer-menu">
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#artistes">Artistes</a></li>
+                    <li><a href="#artiste">Artistes</a></li>
                     <li><a href="#lieu">Lieu</a></li>
-                    <li><a href="tickets">Tickets</a></li>
+                    <li><a href="#ticket">Tickets</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-legal">
-                <a href="#">Mentions légales</a>
-                <a href="#">Vie privée</a>
-                <a href="#">CGU/CGV</a>
+                <a href="#">Mentions légales</a><br>
+                <a href="#">Vie privée</a><br>
+                <a href="#">CGU/CGV</a><br>
+
+
+            </div>
+            <div class="mini-footer">
+                <div class="footer-social">
+                    <ul>
+                        <li><img src="images/socMedias/FacebookLogo.svg" alt="Facebook"></li>
+                        <li><img src="images/socMedias/XLogo.svg" alt="X (Twitter)"></li>
+                        <li><img src="images/socMedias/LogoInstagram.svg" alt="Instagram"></li>
+                        <li><img src="images/socMedias/LogoYouTube.svg" alt="YouTube"></li>
+                        <li><img src="images/socMedias/tiktok-brands.svg" alt="TikTok"></li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-logo-sign">
+
+                    <object data="images/signature/logoSign.xml" type="image/svg+xml" width="100%" height="100%"></object>
+
+                </div>
                 <p>&copy; 2025@s-ezz</p>
 
             </div>
-            <div class="footer-social">
-                <ul>
-                    <li><img src="images/socMedias/FacebookLogo.svg" alt="Facebook"></li>
-                    <li><img src="images/socMedias/XLogo.svg" alt="X (Twitter)"></li>
-                    <li><img src="images/socMedias/LogoInstagram.svg" alt="Instagram"></li>
-                    <li><img src="images/socMedias/LogoYouTube.svg" alt="YouTube"></li>
-                    <li><img src="images/socMedias/tiktok-brands.svg" alt="TikTok"></li>
-                </ul>
-
-            </div>
-
-            <div class="footer-logo-sign">
-
-                <object data="images/signature/logoSign.xml" type="image/svg+xml" width="100%" height="100%"></object>
-
-            </div>
-
-
 
         </div>
 
     </footer>
+    <script src="script.js"></script>
 
-    <script type="text/javascript">
-        const home = document.querySelector("#home")
-        const artiste = document.querySelector("#artiste")
-        const lieu = document.querySelector("#lieu")
-        const ticket = document.querySelector("#ticket")
-        const contact = document.querySelector("#contact")
-        const burger = document.querySelector("#burger")
-        const menuBurger = document.querySelector("#menu-burger")
-        const links = document.querySelectorAll("#menu-burger nav ul li a")
-        let scrolling = 0
-
-        const titleMenu = document.querySelector("#title-menu")
-
-        console.log(lieu)
-
-
-
-        burger.addEventListener("click", function(){
-            burger.classList.toggle("open")
-            menuBurger.classList.toggle("open")
-        })
-
-        links.forEach(link => {
-            link.addEventListener("click", function(){
-                burger.classList.remove("open")
-                menuBurger.classList.remove("open")
-            })
-        })
-
-        window.addEventListener("scroll", function(){
-            scrolling = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
-            console.log(scrolling)
-            console.log("lieu: ",lieu.offsetTop)
-            console.log("ticket: ",ticket.offsetTop)
-            console.log("contact: ", contact.offsetTop)
-
-            if(scrolling < lieu.offsetTop){
-                titleMenu.innerHTML = "Présentation des artistes"
-            }else if((scrolling >= lieu.offsetTop) && (scrolling < ticket.offsetTop)){
-                titleMenu.innerHTML = "Le parc d'Enghien"
-            }else if((scrolling >= ticket.offsetTop) && (scrolling < (contact.offsetTop - 10))){
-                titleMenu.innerHTML = "Commandez votre pass"
-            }else{
-                titleMenu.innerHTML = "Contacts"
-            }
-
-
-
-        })
-
-        //Calcul des tarifs :
-
-        const prixAdultes = [180,60,80,80];
-        const prixEnfants = [50,20,25,25];
-
-        function calculerTotal(){
-            const typeTarif = parseInt(document.getElementById("tarif").value);
-            const nbAdultes = parseInt(document.getElementById("adulte").value) || 0;
-            const nbEnfants = parseInt(document.getElementById("enfant").value) || 0;
-
-            const total = (prixAdultes[typeTarif]*nbAdultes)+(prixEnfants[typeTarif]*nbEnfants);
-
-            document.getElementById('total').textContent = (total*0.9) +' €';
-
-        }
-
-        //Soumission formulaire de contact
-
-        document.getElementById("form-contact").addEventListener("submit", function(e){
-            e.preventDefault();
-            alert('☑️ Messge envoyé avec succés !');
-            this.reset();
-        });
-
-        document.getElementById("form-newsletter").addEventListener("submit", function(e){
-            e.preventDefault();
-            alert('Merci pour votre inscription à la newsletter!');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
