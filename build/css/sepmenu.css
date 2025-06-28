@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #d8bfd8;
+  font-family: "Roboto", sans-serif;
+}
+
+.slide {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container-flex {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#sep-menu {
+  background-color: #f706a7;
+  padding: 20px 0;
+  color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+#sep-menu .container-flex {
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+}
+#sep-menu .container-flex #title-menu {
+  text-transform: uppercase;
+  color: #FFF;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem; /* 66.667% */
+  letter-spacing: 0.1875rem;
+  align-items: center;
+}
+#sep-menu .container-flex #title-menu #menu {
+  display: flex;
+  gap: 20px;
+}
+#sep-menu .container-flex #title-menu #menu #button-ticket {
+  display: block;
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  width: fit-content;
+  border-radius: 10px;
+  color: #f706a7;
+  font-weight: 800;
+  line-height: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  z-index: 1010;
+  text-transform: uppercase;
+}
+#sep-menu .container-flex #title-menu #menu #button-ticket:hover {
+  background-color: #d8bfd8;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  #sep-menu .container-flex #title-menu #menu #button-ticket {
+    margin-top: 10px;
+  }
+}
+#sep-menu .container-flex #title-menu #menu #burger {
+  width: 50px;
+  cursor: pointer;
+  z-index: 1001;
+}
+#sep-menu .container-flex #title-menu #menu #burger .bar {
+  width: 100%;
+  height: 3px;
+  margin: 8px 0;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+#sep-menu #menu-burger {
+  right: 0px; /*ajout recent*/
+  top: calc(105% + 20px);
+  background-color: #f706a7;
+  padding: 20px 100px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 900;
+}
+#sep-menu #menu-burger.open {
+  visibility: visible;
+  opacity: 1;
+}
+@media all and (max-width: 768px) {
+  #sep-menu #menu-burger {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+#sep-menu #menu-burger nav {
+  width: 100%;
+}
+#sep-menu #menu-burger nav ul {
+  list-style: none;
+}
+#sep-menu #menu-burger nav ul li a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 5rem; /* 333.333% */
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+}
+
+#burger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(0px, 15px);
+}
+
+#burger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#burger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(0px, -16px);
+}
+
+/*# sourceMappingURL=sepmenu.css.map */

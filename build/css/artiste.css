@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #d8bfd8;
+  font-family: "Roboto", sans-serif;
+}
+
+.slide {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container-flex {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#artiste {
+  padding: 40px 0;
+}
+#artiste .list-artistes .gradient-text {
+  background: linear-gradient(to right, #2206f7, #f706a7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+#artiste .list-artistes h4 {
+  font-size: 20px;
+  letter-spacing: -0.23px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 20px;
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+}
+#artiste .container-grid {
+  display: grid;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  padding: 30px;
+  margin: 30px 0;
+}
+@media all and (max-width: 1080px) {
+  #artiste .container-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (max-width: 768px) {
+  #artiste .container-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media all and (max-width: 600px) {
+  #artiste .container-grid {
+    grid-template-columns: 1fr;
+  }
+}
+#artiste .container-grid .flip-card {
+  aspect-ratio: 1/1;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: solid 3px #ffffff;
+  cursor: pointer;
+  perspective: 1000px;
+}
+#artiste .container-grid .flip-card .flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  border: 6px solid white;
+  border-radius: 5%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#artiste .container-grid .flip-card .flip-inner:hover {
+  transform: rotateY(180deg);
+  border: 6px solid #f706a7;
+}
+#artiste .container-grid .flip-card .flip-inner .front {
+  background: white;
+}
+#artiste .container-grid .flip-card .flip-inner .front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 7%;
+}
+#artiste .container-grid .flip-card .flip-inner .back {
+  background-image: url("../../images/artistes/back.png");
+  background-size: cover;
+  background-position: center;
+  color: #f706a7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transform: rotateY(180deg);
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+}
+#artiste .container-grid .flip-card .flip-inner .back p {
+  font-family: "Playfair Display", serif;
+}
+#artiste .container-grid .flip-card .front, #artiste .container-grid .flip-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid white;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=artiste.css.map */
