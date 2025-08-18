@@ -10,45 +10,47 @@
 
 </head>
 <body>
+
+    <!-- Navigation colonnes 4 à 13 -->
+    <div class="main-nav">
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#artiste">Artistes</a></li>
+            <li><a href="#lieu">Lieu & Infos</a></li>
+            <li><a href="#ticket">Tickets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+
     <div class="slide" id="home">
 
-        <div class="wrapper">
-            <div class="logo" id="logo">
-                <object data="images/LOGO/logo.xml" type="image/svg+xml" width="100%" height="100%">
-                </object>
-            </div>
-
-            <!-- Réseaux sociaux positionnés à droite -->
-            <div class="socMed" id="socMed">
-                <ul>
-                    <li><img src="images/socMedias/FacebookLogo.svg" alt="Facebook"></li>
-                    <li><img src="images/socMedias/XLogo.svg" alt="X (Twitter)"></li>
-                    <li><img src="images/socMedias/LogoInstagram.svg" alt="Instagram"></li>
-                    <li><img src="images/socMedias/LogoYouTube.svg" alt="YouTube"></li>
-                    <li><img src="images/socMedias/tiktok-brands.svg" alt="TikTok"></li>
-                </ul>
-            </div>
-
-            <!-- Navigation colonnes 4 à 13 -->
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#home">Accueil</a></li>
-                    <li><a href="#artiste">Artistes</a></li>
-                    <li><a href="#lieu">Lieu & Infos</a></li>
-                    <li><a href="#ticket">Tickets</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!-- Section principale avec contenu du festival -->
-            <main class="title" id="title">
-                <h1 class="gradient-text">FESTIVAL DE MUSIQUE</h1>
-                <h2 class="gradient-text">PARC D'ENGHIEN</h2>
-                <h3 class="gradient-text">27-29 JUIN 2025</h3>
-                <div class="tickets"><a href="#ticket">TICKET</a></div>
-            </main>
-
+        <!-- Réseaux sociaux positionnés à droite -->
+        <div class="column socMed" id="socMed">
+            <ul>
+                <li><a href="https://facebook.com" target="_blank"><img src="images/socMedias/FacebookLogo.svg" alt="Facebook"></a></li>
+                <li><a href="https://twitter.com" target="_blank"><img src="images/socMedias/XLogo.svg" alt="X (Twitter)"></a></li>
+                <li><a href="https://instagram.com" target="_blank"><img src="images/socMedias/LogoInstagram.svg" alt="Instagram"></a></li>
+                <li><a href="https://youtube.com" target="_blank"><img src="images/socMedias/LogoYouTube.svg" alt="YouTube"></a></li>
+                <li><a href="https://tiktok.com" target="_blank"><img src="images/socMedias/tiktok-brands.svg" alt="TikTok"></a></li>
+            </ul>
         </div>
+
+        <div class="column logo" id="logo">
+            <object data="images/LOGO/logo.xml" type="image/svg+xml" width="100%" height="100%">
+            </object>
+        </div>
+
+        <!-- Section principale avec contenu du festival -->
+        <main class=" column title" id="title">
+            <h1 class="gradient-text">FESTIVAL DE MUSIQUE</h1>
+            <h2 class="gradient-text">PARC D'ENGHIEN</h2>
+            <h3 class="gradient-text">27-29 JUIN 2025</h3>
+            <div class="tickets"><a href="#ticket">TICKET</a></div>
+        </main>
+
+
+
     </div>
     <div id="sep-menu">
         <div class="container-flex">
@@ -295,7 +297,7 @@
                         <div class="picto">
                             <img src="images/infos/horloge.svg" alt="Horaires" width="28" height="28">
                         </div>
-                        <div class="texte">Horaires : 13h-22h. Tous les jour</div>
+                        <div class="texte">Horaires : 13h-22h. Tous les jours</div>
                     </div>
                     <div class="infos">
                         <div class="picto">
