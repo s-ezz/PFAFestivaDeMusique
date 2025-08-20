@@ -65,6 +65,7 @@
   }
 
   .title{
+    align-items: center;   /*centre horizontalement tous les enfants */
     text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     animation: slideDown 1s ease-in-out forwards; /* Animation */
     transition: all 0.5s ease-out; /* Animation fluide */
@@ -86,7 +87,6 @@
     h2{
       font-size: 42px;
       margin-bottom: 15px;
-      margin-left: 140px;
       font-weight: 700;
 
     }
@@ -97,7 +97,6 @@
       letter-spacing: 5.50px;
       word-wrap: break-word;
       margin-bottom: 40px;
-      margin-left: 150px;
 
     }
     @keyframes slideDown {
@@ -118,35 +117,63 @@
       display: flex;
       width: 234px;
       height: 64px;
-      margin-left: 190px;
-      background-color: rgba(255, 20, 147, 0.34);
+      margin-left: 20px auto 0 auto; /*centré horizontalement*/
+      background:linear-gradient(90deg,#2206f7,#f706a7);
       border-radius: 25px;
-      transition: all 0.3s ease;
+      //transition: all 0.3s ease;
       justify-content: center;
-      align-self: center;
+      //align-self: center;
       align-items: center;
+      cursor:pointer;
+      position:relative;
+      overflow:hidden;
+
+      /* ✨ Animation pulsante avec dégradé */
+      animation: pulseGradient 2s infinite ease-in-out;
+
+      @keyframes pulseGradient {
+        0% {
+          box-shadow: 0 0 10px #2206f7, 0 0 20px #f706a7;
+          transform: scale(1);
+        }
+        50% {
+          box-shadow: 0 0 25px #f706a7, 0 0 40px #2206f7;
+          transform: scale(1.08);
+        }
+        100% {
+          box-shadow: 0 0 10px #2206f7, 0 0 20px #f706a7;
+          transform: scale(1);
+        }
+      }
+
+      a{
+        text-decoration: none;
+        color: white;
+        font-weight: 800;
+        font-size: 18px;
+        letter-spacing: 0.9px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+
+
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.65);
+        //color:#f706a7;
+        transform: scale(1.5);
+    }
+      &:hover a{
+        color:#f706a7;
+        transform:scale(1.25)
+      }
+
+
+
 
     }
 
-    .tickets a {
-      text-decoration: none;
-      color: white;
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: 0.90px;
-      text-transform: uppercase;
-      align-items:center;
-
-    }
-
-    .tickets:hover {
-      background-color: rgba(255, 255, 255, 0.65);
-      color:#f706a7;
-      transform: scale(1.05);
-    }
-    .tickets:hover a{
-      color:#f706a7;
-    }
 
   }
   /* RESEAUX SOCIAUX - Position absolue en haut à droite */
@@ -172,16 +199,21 @@
       padding: 0;
       //justify-content: space-evenly;
       align-items: center;
+
       li {
         display: inline-block;
         img {
           width: 25px;
           height: 25px;
           transition: transform 0.3s ease;
+
+
+
           &:hover {
             transform: scale(1.1);
           }
         }
+
       }
     }
   }

@@ -1,4 +1,5 @@
 
+    //barre titre changeant et menu burger
     const home = document.querySelector("#home")
     const artiste = document.querySelector("#artiste")
     const lieu = document.querySelector("#lieu")
@@ -47,6 +48,7 @@
 
 
 });
+
 
     //Calcul des tarifs :
 

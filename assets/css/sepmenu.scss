@@ -1,9 +1,11 @@
 @use "./general.scss" as *;
 
 #sep-menu{
+  width:100%;
+  height:auto;
   background-color: #f706a7;
   padding: 20px 0;
-  color: white;
+  color: #6d67b8;
   position: sticky;
   top: 0;
   left: 0;
@@ -13,10 +15,11 @@
     width:90%;
     margin:0 auto;
     display:flex;
+    flex-direction: row;
     flex-wrap: wrap;
     color:white;
     //align-items: center;
-    //position:relative;
+    position:relative;
     #title-menu{
       text-transform: uppercase;
       color: #FFF;
@@ -35,7 +38,7 @@
         //  gap: 20px;
         //}
         #button-ticket{
-          display: block;
+          display: inline-block;
           background-color: #FFFFFF;
           padding: 10px 20px;
           width: fit-content;
@@ -73,8 +76,8 @@
     }
   }
   #menu-burger{
-    right:0px;  /*ajout recent*/
-    //position: absolute;
+    //right:0px;  /*ajout recent*/
+    position:absolute;
     top: calc(105% + 20px);
     background-color: #f706a7;
     padding: 20px 100px;
