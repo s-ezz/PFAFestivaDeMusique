@@ -59,6 +59,11 @@
       100% { transform: rotate(360deg); }
     }
 
+    @media all and (max-width:940px)
+    {
+      width:20%;
+      height:auto;
+    }
 
 
 
@@ -79,7 +84,7 @@
       font-family: Roboto, sans-serif;
       margin-top: 100px;
       margin-bottom: 20px;
-      margin-left: 150px;
+      //margin-left: 150px;
       letter-spacing: 5.40px;
       word-wrap: break-word;
 
@@ -117,7 +122,7 @@
       display: flex;
       width: 234px;
       height: 64px;
-      margin-left: 20px auto 0 auto; /*centré horizontalement*/
+      margin-left:20px auto 0 auto; /*centré horizontalement*/
       background:linear-gradient(90deg,#2206f7,#f706a7);
       border-radius: 25px;
       //transition: all 0.3s ease;
@@ -128,7 +133,7 @@
       position:relative;
       overflow:hidden;
 
-      /* ✨ Animation pulsante avec dégradé */
+      /* Animation pulsante avec dégradé */
       animation: pulseGradient 2s infinite ease-in-out;
 
       @keyframes pulseGradient {
@@ -173,7 +178,16 @@
 
 
     }
-
+    @media all and (max-width:940px)
+    {
+      width:20%;
+      height:auto;
+    }
+    @media all and (max-width:560px)
+    {
+      width:10%;
+      height:auto;
+    }
 
   }
   /* RESEAUX SOCIAUX - Position absolue en haut à droite */

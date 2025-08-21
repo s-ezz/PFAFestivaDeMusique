@@ -92,6 +92,12 @@ body {
     transform: rotate(360deg);
   }
 }
+@media all and (max-width: 940px) {
+  #home .logo {
+    width: 20%;
+    height: auto;
+  }
+}
 #home .title {
   align-items: center; /*centre horizontalement tous les enfants */
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
@@ -109,7 +115,6 @@ body {
   font-family: Roboto, sans-serif;
   margin-top: 100px;
   margin-bottom: 20px;
-  margin-left: 150px;
   letter-spacing: 5.4px;
   word-wrap: break-word;
 }
@@ -148,7 +153,7 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  /* ✨ Animation pulsante avec dégradé */
+  /* Animation pulsante avec dégradé */
   animation: pulseGradient 2s infinite ease-in-out;
 }
 @keyframes pulseGradient {
@@ -182,6 +187,18 @@ body {
 #home .title .tickets:hover a {
   color: #f706a7;
   transform: scale(1.25);
+}
+@media all and (max-width: 940px) {
+  #home .title {
+    width: 20%;
+    height: auto;
+  }
+}
+@media all and (max-width: 560px) {
+  #home .title {
+    width: 10%;
+    height: auto;
+  }
 }
 #home .socMed {
   position: absolute;
@@ -243,22 +260,44 @@ body {
   background-clip: text;
 }
 #artiste .list-artistes h4 {
-  font-size: 20px;
-  letter-spacing: -0.23px;
+  font-size: 1.5em;
+  letter-spacing: 0.23px;
   font-weight: 400;
   text-align: center;
-  line-height: 20px;
+  line-height: 2em;
   font-family: "Playfair Display", serif;
   font-style: normal;
+}
+@media all and (max-width: 980px) {
+  #artiste .list-artistes {
+    font-size: 1em;
+    letter-spacing: 0px;
+  }
+}
+@media all and (max-width: 590px) {
+  #artiste .list-artistes {
+    font-size: 0.8em;
+    letter-spacing: 0px;
+  }
 }
 #artiste .container-grid {
   display: grid;
   border: 3px solid #ffffff;
   border-radius: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   grid-gap: 30px;
   padding: 30px;
   margin: 30px 0;
+}
+@media all and (max-width: 1930px) {
+  #artiste .container-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media all and (max-width: 1500px) {
+  #artiste .container-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 @media all and (max-width: 1080px) {
   #artiste .container-grid {
@@ -273,11 +312,12 @@ body {
 @media all and (max-width: 600px) {
   #artiste .container-grid {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 }
 #artiste .container-grid .flip-card {
   aspect-ratio: 1/1;
-  height: 200px;
+  height: 100%;
   border-radius: 10px;
   overflow: hidden;
   border: solid 3px #ffffff;
@@ -410,6 +450,11 @@ body {
   width: 100%;
   height: 100%;
 }
+@media all and (max-width: 500px) {
+  #ticket .container-flex-prix .container-flex-gauche {
+    width: 100%;
+  }
+}
 #ticket .container-flex-prix .container-flex-droit {
   width: 48%;
   display: flex;
@@ -471,6 +516,16 @@ body {
   width: 100%;
   height: 100%;
 }
+@media all and (max-width: 500px) {
+  #ticket .container-flex-prix .container-flex-droit {
+    width: 100%;
+  }
+}
+@media all and (max-width: 500px) {
+  #ticket .container-flex-prix {
+    flex-direction: column;
+  }
+}
 #ticket .wrapper {
   width: 100%;
   margin: 0 auto;
@@ -493,12 +548,22 @@ body {
   border-radius: 8px;
   gap: 50px;
 }
+@media all and (max-width: 800px) {
+  #ticket .wrapper .container-tab {
+    flex-direction: column;
+  }
+}
 #ticket .wrapper .container-tab .table {
   width: 48%;
   border-collapse: collapse;
   margin-bottom: 1.5rem;
   border: 3px solid #fff;
   border-radius: 10px;
+}
+@media all and (max-width: 800px) {
+  #ticket .wrapper .container-tab .table {
+    width: 100%;
+  }
 }
 #ticket .wrapper .container-tab .table thead {
   background-color: #5d365d;
@@ -569,6 +634,11 @@ body {
 }
 #ticket .wrapper .container-tab .form-prix button p #total {
   font-weight: bold;
+}
+@media all and (max-width: 800px) {
+  #ticket .wrapper .container-tab .form-prix {
+    width: 100%;
+  }
 }
 #ticket .wrapper p {
   font-size: 0.75rem;
@@ -711,7 +781,7 @@ body {
   flex: 1 1 300px;
   width: 50%;
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 800px) {
   #contact .container-flex .gauche, #contact .container-flex .droite {
     width: 100%;
   }
@@ -1041,12 +1111,12 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  color: white;
+  align-items: center;
   position: relative;
 }
 #sep-menu .container-flex #title-menu {
+  width: 80%;
   text-transform: uppercase;
-  color: #FFF;
   font-size: 1.875rem;
   font-style: normal;
   font-weight: 700;
@@ -1054,13 +1124,29 @@ body {
   letter-spacing: 0.1875rem;
   align-items: center;
 }
-#sep-menu .container-flex #title-menu #menu {
+@media all and (max-width: 940px) {
+  #sep-menu .container-flex #title-menu {
+    width: 60%;
+    height: auto;
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 560px) {
+  #sep-menu .container-flex #title-menu {
+    width: 60%;
+    letter-spacing: 0rem;
+    font-size: 1.3rem;
+  }
+}
+#sep-menu .container-flex #menu {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 20px;
 }
-#sep-menu .container-flex #title-menu #menu #button-ticket {
+#sep-menu .container-flex #menu #button-ticket {
   display: inline-block;
-  background-color: #FFFFFF;
+  background-color: #6d67b8;
   padding: 10px 20px;
   width: fit-content;
   border-radius: 10px;
@@ -1070,33 +1156,36 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  z-index: 1010;
+  z-index: 1050;
   text-transform: uppercase;
 }
-#sep-menu .container-flex #title-menu #menu #button-ticket:hover {
+#sep-menu .container-flex #menu #button-ticket:hover {
   background-color: #d8bfd8;
-  color: #ffffff;
+  color: #f706a7;
 }
 @media (max-width: 768px) {
-  #sep-menu .container-flex #title-menu #menu #button-ticket {
+  #sep-menu .container-flex #menu #button-ticket {
     margin-top: 10px;
   }
 }
-#sep-menu .container-flex #title-menu #menu #burger {
+#sep-menu .container-flex #menu #burger {
   width: 50px;
+  height: 50px;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1011;
 }
-#sep-menu .container-flex #title-menu #menu #burger .bar {
+#sep-menu .container-flex #menu #burger .bar {
   width: 100%;
-  height: 3px;
+  height: 6px;
   margin: 8px 0;
-  background-color: #ffffff;
+  background-color: #6d67b8;
   transition: all 0.3s ease;
 }
-#sep-menu #menu-burger {
+
+#menu-burger {
   position: absolute;
   top: calc(105% + 20px);
+  right: 0px;
   background-color: #f706a7;
   padding: 20px 100px;
   visibility: hidden;
@@ -1104,25 +1193,25 @@ body {
   transition: all 0.3s ease;
   z-index: 900;
 }
-#sep-menu #menu-burger.open {
+#menu-burger.open {
   visibility: visible;
   opacity: 1;
 }
 @media all and (max-width: 768px) {
-  #sep-menu #menu-burger {
+  #menu-burger {
     width: 100%;
     box-sizing: border-box;
   }
 }
-#sep-menu #menu-burger nav {
+#menu-burger nav {
   width: 100%;
 }
-#sep-menu #menu-burger nav ul {
+#menu-burger nav ul {
   list-style: none;
 }
-#sep-menu #menu-burger nav ul li a {
+#menu-burger nav ul li a {
   text-decoration: none;
-  color: #FFF;
+  color: #6d67b8;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
@@ -1140,7 +1229,7 @@ body {
 }
 
 #burger.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(0px, -16px);
+  transform: rotate(-45deg) translate(0px, -17px);
 }
 
 /*# sourceMappingURL=style.css.map */
