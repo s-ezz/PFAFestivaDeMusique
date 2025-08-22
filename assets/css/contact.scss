@@ -36,7 +36,7 @@
           display: flex;
           flex-direction: column;
           margin: 0 auto;
-
+          color: #5d365d;
           label {
             margin-top: 1rem;
             //font-weight: bold;
@@ -46,13 +46,14 @@
               display: flex;
               align-items: center;
               font-size: 0.9rem;
-
+              color: #5d365d;
               input {
                 margin-top: 0.5rem;
                 padding: 0.75rem;
                 font-size: 1rem;
                 border-radius: 5px;
                 border: 1px solid #5d365d;
+
               }
             }
           }
@@ -112,6 +113,7 @@
         flex-direction: column;
         gap: 1.75rem;
         p {
+          color: #5d365d;
         }
 
         .lien {

@@ -804,6 +804,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  color: #5d365d;
 }
 #contact .container-flex .gauche .formulaire #form-contact label {
   margin-top: 1rem;
@@ -813,6 +814,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
+  color: #5d365d;
 }
 #contact .container-flex .gauche .formulaire #form-contact label .checkbox input {
   margin-top: 0.5rem;
@@ -860,6 +862,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+}
+#contact .container-flex .droite .infos p {
+  color: #5d365d;
 }
 #contact .container-flex .droite .infos .lien {
   width: 100%;
@@ -928,7 +933,8 @@ body {
   background-color: #5d365d;
   color: #ffffff;
   width: 100%;
-  height: 10vh;
+  height: auto !important;
+  min-height: 0;
 }
 #footer .wrapper {
   width: 90%;
@@ -939,8 +945,7 @@ body {
   text-align: center;
 }
 #footer .wrapper .footer-logo {
-  bottom: 100px;
-  width: 40%;
+  width: 10%;
   height: auto;
   padding: 10px;
   text-align: center;
@@ -958,16 +963,18 @@ body {
   }
 }
 #footer .wrapper .footer-logo object {
-  width: 12.5%;
+  max-width: 120px;
   height: auto;
-  filter: invert(100%);
+  margin: 0 auto;
 }
 #footer .wrapper .footer-menu {
   align-items: start;
 }
 #footer .wrapper .footer-menu ul {
   text-align: left;
-  text-transforme: uppercase;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
 }
 #footer .wrapper .footer-menu ul li {
   list-style: none;
@@ -980,6 +987,9 @@ body {
 }
 #footer .wrapper .footer-legal {
   text-align: left;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-transform: uppercase;
 }
 #footer .wrapper .footer-legal a {
   color: inherit;
@@ -992,7 +1002,7 @@ body {
   border-radius: 8px;
   backdrop-filter: blur(3px);
   z-index: 10;
-  padding: 10px;
+  padding: 2px;
   text-align: right;
 }
 #footer .wrapper .footer-social ul {
@@ -1019,6 +1029,11 @@ body {
   text-align: center;
   width: 20%;
   height: 20%;
+}
+@media all and (max-width: 500px) {
+  #footer .wrapper {
+    flex-direction: column;
+  }
 }
 
 /* NAVIGATION - */
