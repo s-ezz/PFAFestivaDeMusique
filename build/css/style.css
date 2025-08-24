@@ -10,9 +10,6 @@
 
 html, body {
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -38,6 +35,100 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+/* Reset de base pour formulaires */
+button,
+input,
+select,
+textarea {
+  all: unset; /* supprime les styles par défaut du navigateur */
+  box-sizing: border-box;
+  font: inherit; /* garde la même police que le reste de la page */
+}
+
+/* Remet un minimum d’ergonomie sur les boutons */
+button,
+input[type=submit],
+input[type=button] {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  background: #6d67b8;
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+/* Effet hover */
+button:hover,
+input[type=submit]:hover,
+input[type=button]:hover {
+  background: #6d67b8;
+}
+
+/* Focus visible (accessibilité) */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #6d67b8;
+  outline-offset: 2px;
+}
+
+/* Checkbox carrée */
+input[type=checkbox] {
+  all: unset; /* reset */
+  width: 10px;
+  height: 10px;
+  border: 2px solid #6d67b8;
+  border-radius: 4px; /* 0px si tu veux un carré strict */
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+}
+
+/* coche personnalisée */
+input[type=checkbox]:checked::after {
+  content: "✓";
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type=checkbox]:checked {
+  background-color: #6d67b8;
+  border-color: #5d365d;
+}
+
+/* Radio bouton rond */
+input[type=radio] {
+  all: unset;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6d67b8;
+  border-radius: 50%; /* rond */
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+}
+
+/* point central quand coché */
+input[type=radio]:checked::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #6d67b8;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #home {
@@ -69,7 +160,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   height: auto;
-  width: 20%;
+  width: 10%;
   text-align: center;
   z-index: 10;
   border-radius: 8px;
@@ -92,10 +183,15 @@ body {
     transform: rotate(360deg);
   }
 }
-@media all and (max-width: 940px) {
+@media all and (max-width: 1300px) {
   #home .logo {
     width: 20%;
     height: auto;
+  }
+}
+@media all and (max-width: 550px) {
+  #home .logo {
+    width: 30%;
   }
 }
 #home .title {
@@ -251,7 +347,11 @@ body {
 
  */
 #artiste {
-  padding: 40px 0;
+  padding: 90px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 #artiste .list-artistes .gradient-text {
   background: linear-gradient(to right, #2206f7, #f706a7);
@@ -357,7 +457,7 @@ body {
   background-size: cover;
   background-position: center;
   color: #f706a7;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   transform: rotateY(180deg);
   padding: 15px;
   box-sizing: border-box;
@@ -383,13 +483,14 @@ body {
 #ticket {
   width: 90%;
   margin: 0 auto;
+  padding-top: 90px;
 }
 #ticket .container-flex-prix {
   display: flex;
-  min-height: 100vh;
+  flex-wrap: wrap;
   padding: 30px 0;
   justify-content: center;
-  column-gap: 50px;
+  gap: 50px;
 }
 #ticket .container-flex-prix .container-flex-gauche {
   width: 48%;
@@ -407,7 +508,7 @@ body {
   text-transform: uppercase;
 }
 #ticket .container-flex-prix .container-flex-gauche p {
-  font-size: 0.75rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   color: #5d365d;
   font-style: normal;
@@ -455,11 +556,15 @@ body {
     width: 100%;
   }
 }
+@media all and (max-width: 1080px) {
+  #ticket .container-flex-prix .container-flex-gauche {
+    width: 100%;
+  }
+}
 #ticket .container-flex-prix .container-flex-droit {
   width: 48%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   padding: 30px 0;
   column-gap: 50px;
 }
@@ -473,7 +578,7 @@ body {
   text-transform: uppercase;
 }
 #ticket .container-flex-prix .container-flex-droit p {
-  font-size: 0.75rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   color: #5d365d;
   font-style: normal;
@@ -521,6 +626,11 @@ body {
     width: 100%;
   }
 }
+@media all and (max-width: 1080px) {
+  #ticket .container-flex-prix .container-flex-droit {
+    width: 100%;
+  }
+}
 @media all and (max-width: 500px) {
   #ticket .container-flex-prix {
     flex-direction: column;
@@ -558,7 +668,7 @@ body {
   border-collapse: collapse;
   margin-bottom: 1.5rem;
   border: 3px solid #fff;
-  border-radius: 10px;
+  border-radius: 15%;
 }
 @media all and (max-width: 800px) {
   #ticket .wrapper .container-tab .table {
@@ -597,10 +707,15 @@ body {
   width: 100%;
   border: 3px solid #5d365d;
 }
+#ticket .wrapper .container-tab .form-prix select option {
+  border: 3px solid #ffffff;
+  border-radius: 10%;
+}
 #ticket .wrapper .container-tab .form-prix input {
   padding: 0.5rem;
   width: 100%;
   border: 3px solid #ffffff;
+  border-radius: 10px;
 }
 #ticket .wrapper .container-tab .form-prix button {
   width: 100%;
@@ -616,6 +731,11 @@ body {
   margin: 0 auto;
   text-align: center;
 }
+#ticket .wrapper .container-tab .form-prix button button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5); /* contour bleu adapté */
+  outline-offset: 3px; /* petit espace autour */
+  border-radius: 8px;
+}
 #ticket .wrapper .container-tab .form-prix button:hover {
   background-color: #f706a7;
   color: rgba(255, 255, 255, 0.65);
@@ -626,14 +746,16 @@ body {
   text-align: center;
   font-feature-settings: "liga" off, "clig" off;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 40px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 110%; /* 110% */
   letter-spacing: 5px;
 }
 #ticket .wrapper .container-tab .form-prix button p #total {
+  font-size: 40px;
   font-weight: bold;
+  color: gray(255);
 }
 @media all and (max-width: 800px) {
   #ticket .wrapper .container-tab .form-prix {
@@ -655,6 +777,9 @@ body {
   height: auto;
 }
 
+#lieu {
+  padding-top: 90px;
+}
 #lieu .container-flex {
   min-height: 100vh;
   padding: 30px 0;
@@ -702,6 +827,11 @@ body {
     padding-top: 20px;
   }
 }
+@media all and (max-width = 1390px) {
+  #lieu #info-pratique {
+    padding-top: 20px;
+  }
+}
 #lieu #info-pratique h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -717,6 +847,7 @@ body {
   flex-direction: column;
   align-self: center;
   border-radius: 10%;
+  height: calc(100% - 55px);
   background-color: rgba(255, 255, 255, 0.46);
   padding: 4rem;
   gap: 2rem;
@@ -744,7 +875,6 @@ body {
 }
 #lieu #info-pratique #cadre-info .lien {
   width: 100%;
-  height: 64%;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: rgba(255, 20, 147, 0.34);
@@ -772,18 +902,21 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #d8bfd8;
-  padding-top: 200px;
+  padding-top: 120px;
+  min-height: 80vh;
+  padding-bottom: 50px;
 }
 #contact .container-flex {
   display: flex;
+  flex-wrap: wrap;
 }
 #contact .container-flex .gauche, #contact .container-flex .droite {
-  flex: 1 1 300px;
   width: 50%;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 1260px) {
   #contact .container-flex .gauche, #contact .container-flex .droite {
     width: 100%;
+    padding: 30px 30px 30px 30px;
   }
 }
 #contact .container-flex .gauche {
@@ -852,6 +985,7 @@ body {
   align-items: center;
   margin: 0 auto;
   text-align: center;
+  margin-top: 1rem;
 }
 #contact .container-flex .gauche .formulaire #form-contact button:hover {
   background-color: #f706a7;
@@ -862,9 +996,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  padding: 30px 30px 30px 30px;
 }
 #contact .container-flex .droite .infos p {
   color: #5d365d;
+}
+@media all and (max-width: 1080px) {
+  #contact .container-flex .droite .infos p {
+    width: 100%;
+  }
 }
 #contact .container-flex .droite .infos .lien {
   width: 100%;
@@ -880,7 +1020,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  font-wheight: bold;
+  font-weight: bold;
 }
 #contact .container-flex .droite .infos .lien:hover {
   background-color: #f706a7;
@@ -889,13 +1029,17 @@ body {
 }
 #contact .container-flex .droite .infos h2 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   color: #5d365d;
   font-style: normal;
   font-weight: 700;
   line-height: 20px;
   text-transform: uppercase;
-  padding-bottom: 20px;
+}
+@media all and (max-width: 550px) {
+  #contact .container-flex .droite .infos p {
+    width: 100%;
+  }
 }
 #contact .container-flex .droite .infos form label {
   text-transform: uppercase;
@@ -923,6 +1067,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  margin-top: 1rem;
 }
 #contact .container-flex .droite .infos form .lien:hover {
   background-color: #f706a7;
@@ -940,14 +1085,10 @@ body {
   width: 90%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  justify-content: space-evenly;
 }
 #footer .wrapper .footer-logo {
-  width: 10%;
-  height: auto;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   z-index: 10;
   border-radius: 8px;
@@ -969,15 +1110,23 @@ body {
 }
 #footer .wrapper .footer-menu {
   align-items: start;
+  padding: 20px;
+}
+#footer .wrapper .footer-menu h6 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-bottom: 1rem;
 }
 #footer .wrapper .footer-menu ul {
   text-align: left;
   display: flex;
   flex-direction: column;
+  align-items: start;
   text-transform: uppercase;
 }
 #footer .wrapper .footer-menu ul li {
   list-style: none;
+  line-height: 0.8rem;
 }
 #footer .wrapper .footer-menu ul li a {
   color: inherit;
@@ -986,18 +1135,43 @@ body {
   margin-bottom: 0.5rem;
 }
 #footer .wrapper .footer-legal {
-  text-align: left;
-  font-size: 0.9rem;
+  padding: 20px;
+}
+#footer .wrapper .footer-legal h6 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-bottom: 1rem;
   opacity: 0.8;
+}
+#footer .wrapper .footer-legal ul {
+  text-align: left;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
   text-transform: uppercase;
 }
-#footer .wrapper .footer-legal a {
+#footer .wrapper .footer-legal ul li {
+  list-style: none;
+  line-height: 0.8rem;
+  opacity: 0.8;
+}
+#footer .wrapper .footer-legal ul li a {
   color: inherit;
   text-decoration: none;
   display: block;
   margin-bottom: 0.5rem;
+  line-height: 0.8rem;
 }
-#footer .wrapper .footer-social {
+#footer .wrapper .mini-footer {
+  padding: 20px;
+  width: 20%;
+}
+#footer .wrapper .mini-footer h6 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+#footer .wrapper .mini-footer .footer-social {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   backdrop-filter: blur(3px);
@@ -1005,7 +1179,12 @@ body {
   padding: 2px;
   text-align: right;
 }
-#footer .wrapper .footer-social ul {
+#footer .wrapper .mini-footer .footer-social h6 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+#footer .wrapper .mini-footer .footer-social ul {
   list-style: none;
   display: flex;
   gap: 8px;
@@ -1014,36 +1193,50 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
-#footer .wrapper .footer-social ul li {
+#footer .wrapper .mini-footer .footer-social ul li {
   display: inline-block;
 }
-#footer .wrapper .footer-social ul li img {
+#footer .wrapper .mini-footer .footer-social ul li img {
   width: 25px;
   height: 25px;
   transition: transform 0.3s ease;
 }
-#footer .wrapper .footer-social ul li:hover {
+#footer .wrapper .mini-footer .footer-social ul li:hover {
   transform: scale(1.1);
 }
+@media all and (max-width: 1500px) {
+  #footer .wrapper .mini-footer {
+    width: 15%;
+  }
+}
+@media all and (max-width: 1400px) {
+  #footer .wrapper .mini-footer {
+    width: 80%;
+  }
+}
 #footer .wrapper .footer-logo-sign {
-  text-align: center;
-  width: 20%;
+  width: 200px;
   height: 20%;
+  margin-top: 20px;
 }
 @media all and (max-width: 500px) {
   #footer .wrapper {
     flex-direction: column;
   }
+  #footer .wrapper .footer-logo {
+    width: 100%;
+    padding: 20px;
+  }
+  #footer .wrapper .footer-logo-sign {
+    width: 10px;
+  }
 }
 
 /* NAVIGATION - */
 .main-nav {
-  position: sticky;
-  top: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
-  z-index: 9999;
 }
 .main-nav ul {
   list-style: none;
@@ -1076,7 +1269,7 @@ body {
 .main-nav ul li a {
   position: relative;
   text-decoration: none;
-  color: #6d67b8;
+  color: #ffffff;
   padding: 15px 10px;
   display: inline-block;
   font-weight: 400;
@@ -1183,6 +1376,11 @@ body {
     margin-top: 10px;
   }
 }
+@media (max-width: 460px) {
+  #sep-menu .container-flex #menu #button-ticket {
+    display: none;
+  }
+}
 #sep-menu .container-flex #menu #burger {
   width: 50px;
   height: 50px;
@@ -1195,6 +1393,13 @@ body {
   margin: 8px 0;
   background-color: #6d67b8;
   transition: all 0.3s ease;
+}
+@media all and (max-width: 460px) {
+  #sep-menu .container-flex #menu #burger {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 }
 
 #menu-burger {
@@ -1227,7 +1432,7 @@ body {
 #menu-burger nav ul li a {
   text-decoration: none;
   color: #6d67b8;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
   line-height: 5rem; /* 333.333% */
@@ -1244,7 +1449,7 @@ body {
 }
 
 #burger.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(0px, -17px);
+  transform: rotate(-45deg) translate(5px, -19px);
 }
 
 /*# sourceMappingURL=style.css.map */

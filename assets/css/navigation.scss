@@ -2,12 +2,11 @@
 
 /* NAVIGATION - */
 .main-nav {
-  position: sticky;
-  top:0;
+
   width:100%;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
-  z-index: 9999;
+
 
   ul {
     list-style: none;
@@ -41,7 +40,7 @@
       a {
         position: relative;
         text-decoration: none;
-        color:#6d67b8;
+        color:#ffffff;
         padding: 15px 10px;
         display: inline-block;
         font-weight: 400;
@@ -69,6 +68,7 @@
         &:hover {
           text-shadow: 0 0 8px #f706a7, 0 0 15px #2206f7;
           transform: scale(1.05);
+
         }
 
         &:active {

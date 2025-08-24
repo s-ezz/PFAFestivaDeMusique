@@ -1,6 +1,7 @@
 @use "./general.scss" as *;
 
 #lieu{
+  padding-top:90px;
   .container-flex{
     min-height: 100vh;
     padding: 30px 0;
@@ -51,6 +52,10 @@
       width: 100%;
       padding-top:20px;
     }
+
+    @media all and (max-width=1390px){
+      padding-top:20px;
+    }
     h2{
       font-size: 1.5rem;
       margin-bottom: 1rem;
@@ -66,6 +71,7 @@
       flex-direction: column;
       align-self:center;
       border-radius : 10%;
+      height:calc(100% - 55px);
 
 
 
@@ -109,7 +115,6 @@
       .lien{
 
         width: 100%;
-        height: 64%;
         padding-top:5px;
         padding-bottom:5px;
 

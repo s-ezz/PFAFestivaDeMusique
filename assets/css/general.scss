@@ -10,9 +10,8 @@
 
 html,body{
   width:100%;
-  height:100%;
-  margin:0;
-  padding:0;
+  //height:100%;
+
 }
 
 body {
@@ -43,4 +42,97 @@ body {
   display: flex;
   flex-wrap: wrap;
 
+}
+
+/* Reset de base pour formulaires */
+button,
+input,
+select,
+textarea {
+  all: unset; /* supprime les styles par défaut du navigateur */
+  box-sizing: border-box;
+  font: inherit; /* garde la même police que le reste de la page */
+}
+
+/* Remet un minimum d’ergonomie sur les boutons */
+button,
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  background:#6d67b8;
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+/* Effet hover */
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background: #6d67b8;
+}
+
+/* Focus visible (accessibilité) */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #6d67b8;
+  outline-offset: 2px;
+}
+/* Checkbox carrée */
+input[type="checkbox"] {
+  all: unset; /* reset */
+  width: 10px;
+  height: 10px;
+  border: 2px solid #6d67b8;
+  border-radius: 4px; /* 0px si tu veux un carré strict */
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+}
+
+/* coche personnalisée */
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:checked {
+  background-color: #6d67b8;
+  border-color:#5d365d;
+}
+
+/* Radio bouton rond */
+input[type="radio"] {
+  all: unset;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6d67b8;
+  border-radius: 50%; /* rond */
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+}
+
+/* point central quand coché */
+input[type="radio"]:checked::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #6d67b8;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

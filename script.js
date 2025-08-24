@@ -50,21 +50,27 @@
 });
 
 
-    //Calcul des tarifs :
+    // Calcul des tarifs
+    const prixAdultes = [180, 60, 80, 80];
+    const prixEnfants = [50, 20, 25, 25];
 
-    const prixAdultes = [180,60,80,80];
-    const prixEnfants = [50,20,25,25];
+    function calculerTotal() {
+        const typeTarif = parseInt(document.getElementById("tarif").value);
+        const nbAdultes = parseInt(document.getElementById("adulte").value) || 0;
+        const nbEnfants = parseInt(document.getElementById("enfant").value) || 0;
 
-    function calculerTotal(){
-    const typeTarif = parseInt(document.getElementById("tarif").value);
-    const nbAdultes = parseInt(document.getElementById("adulte").value) || 0;
-    const nbEnfants = parseInt(document.getElementById("enfant").value) || 0;
+        const total = (prixAdultes[typeTarif] * nbAdultes) + (prixEnfants[typeTarif] * nbEnfants);
 
-    const total = (prixAdultes[typeTarif]*nbAdultes)+(prixEnfants[typeTarif]*nbEnfants);
+        document.getElementById("total").textContent = (total * 0.9) + " €";
+    }
 
-    document.getElementById('total').textContent = (total*0.9) +' €';
+    // ⚡ Ajout des écouteurs pour recalcul automatique
+    document.getElementById("tarif").addEventListener("change", calculerTotal);
+    document.getElementById("adulte").addEventListener("input", calculerTotal);
+    document.getElementById("enfant").addEventListener("input", calculerTotal);
 
-}
+    // ⚡ Calcul initial quand la page se charge
+    calculerTotal();
 
     //Soumission formulaire de contact
 

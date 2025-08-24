@@ -28,7 +28,7 @@
     align-items:flex-start;
     justify-content: flex-start;
     height:auto;
-    width:20%;
+    width:10%;
     //margin : 0;
     //padding:0;
     //display: flex;
@@ -59,10 +59,15 @@
       100% { transform: rotate(360deg); }
     }
 
-    @media all and (max-width:940px)
+    @media all and (max-width:1300px)
     {
       width:20%;
       height:auto;
+    }
+    @media all and (max-width:550px)
+    {
+      width:30%;
+
     }
 
 

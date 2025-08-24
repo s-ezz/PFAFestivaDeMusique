@@ -5,23 +5,30 @@
   justify-content: center;
   align-items: center;
   background-color: #d8bfd8;
-  padding-top:200px;
+  padding-top:120px;
+  min-height:80vh;
+  padding-bottom:50px;
   .container-flex{
     display: flex;
+    flex-wrap:wrap;
+
     .gauche, .droite {
-      flex:1 1 300px;
       width: 50%;
-      @media all and (max-width: 800px)
+      @media all and (max-width: 1260px)
       {
         width: 100%;
+        padding:30px 30px 30px 30px;
+
       }
-    };
+    }
     .gauche {
 
       display: flex;
       justify-content: center;
 
+
       .formulaire {
+
         h2 {
           font-size: 1.5rem;
           margin-bottom: 1rem;
@@ -39,8 +46,7 @@
           color: #5d365d;
           label {
             margin-top: 1rem;
-            //font-weight: bold;
-
+            //margin-bottom: 1rem;
             .checkbox {
               margin-top: 1rem;
               display: flex;
@@ -93,6 +99,7 @@
             margin: 0 auto;
             text-align: center;
             //justify-content: center;
+            margin-top:1rem;
             &:hover {
               background-color: #f706a7;
               color: rgba(255, 255, 255, 0.65);
@@ -105,6 +112,7 @@
 
         }
       }
+
     }
     .droite {
 
@@ -112,8 +120,13 @@
         display:flex;
         flex-direction: column;
         gap: 1.75rem;
+        padding:30px 30px 30px 30px;
         p {
           color: #5d365d;
+          @media all and (max-width: 1080px)
+          {
+            width: 100%;
+          }
         }
 
         .lien {
@@ -131,7 +144,7 @@
           text-align: center;
           text-transform:uppercase;
           color:#ffffff;
-          font-wheight:bold;
+          font-weight:bold;
           &:hover {
             background-color: #f706a7;
             color: rgba(255, 255, 255, 0.65);
@@ -141,15 +154,19 @@
 
         h2 {
           font-size: 1.5rem;
-          margin-bottom: 1rem;
+          margin-top: 1rem;
           color: #5d365d;
           font-style: normal;
           font-weight: 700;
           line-height: 20px;
           text-transform: uppercase;
-          padding-bottom: 20px;
+          //padding-bottom: 20px;
         }
-
+        p{
+          @media all and (max-width: 550px){
+            width:100%;
+          }
+        }
         form {
 
           label{
@@ -164,6 +181,7 @@
             font-size: 1rem;
             border-radius: 5px;
             border: 1px solid #5d365d;
+
 
           }
 
@@ -182,7 +200,7 @@
             text-align: center;
             text-transform:uppercase;
             color:#ffffff;
-
+            margin-top:1rem;
             &:hover {
               background-color: #f706a7;
               color: rgba(255, 255, 255, 0.65);
