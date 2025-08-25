@@ -2,7 +2,7 @@
 
 #sep-menu{
   width:100%;
-  height:auto;
+  min-height:80px;
   background-color: #f706a7;
   padding: 20px 0;
   color: #6d67b8;
@@ -88,7 +88,7 @@
           }
           @media all and (max-width:460px){
             position:absolute;
-            top:10px;
+            top:0px;
             right:10px;
           }
         }
